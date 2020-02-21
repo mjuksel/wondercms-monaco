@@ -55,6 +55,7 @@ document.querySelectorAll('.editable').forEach((el, index, array) => {
               return null;
             }
           });
+
           // this one makes it so Enter actually goes to a new line.
           editor.addCommand(
             monaco.KeyCode.Enter,
@@ -74,11 +75,10 @@ document.querySelectorAll('.editable').forEach((el, index, array) => {
           // resize when lineCount changes.
           const updateHeight = () => {
             const lineHeight = editor.getOption(monaco.editor.EditorOption.lineHeight);
-            const lineCount = editor.getValue().match(/\n/g).length;
+            const lineCount = editor.getModel().getLinesContent().length;
             const hght = lineHeight * (lineCount + 2);
             if (initHeight !== hght) {
               initHeight = hght;
-              // document.querySelector(`#${el.id}`)
               el.style.height = `${hght}px`;
               editor.layout();
             }
