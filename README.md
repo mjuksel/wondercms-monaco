@@ -19,6 +19,6 @@ This [WonderCMS] plugin adds Microsoft's [Monaco Editor], best known for powerin
 3. Find plugin in the list and click "install".
 4. Click any editable area!
 
-[wondercms]: (https://github.com/robiso/wondercms/)
-[monaco editor]: (https://github.com/microsoft/monaco-editor/)
-[vscode]: (https://github.com/microsoft/vscode/)
+[wondercms]: https://github.com/robiso/wondercms/
+[monaco editor]: https://github.com/microsoft/monaco-editor/
+[vscode]: https://github.com/microsoft/vscode/
