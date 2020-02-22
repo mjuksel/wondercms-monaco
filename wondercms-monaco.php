@@ -3,7 +3,7 @@
  * Microsoft's Monaco Editor for WonderCMS! :)
  *
  * @author mjxl
- * @version 3.0.1
+ * @version 3.0.2
  */
 
 global $Wcms;
