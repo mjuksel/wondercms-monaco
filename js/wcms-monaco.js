@@ -21,7 +21,7 @@ let proxy = URL.createObjectURL(
 );
 
 document.querySelectorAll('.editable').forEach((el) => {
-  let wrapper = document.createel('div');
+  let wrapper = document.createElement('div');
   wrapper.id = `monaco_${el.id}`;
   wrapper.classList.add('text-left');
   el.parentElement.insertBefore(wrapper, el);
@@ -35,7 +35,6 @@ function makeEditor(el, ed) {
   require(['vs/editor/editor.main'], () => {
     // create editor, i've added some basic settings.
     let editor = monaco.editor.create(ed, {
-      id: el.id,
       value: txt,
       language: 'text/html',
       theme: 'vs-dark',
