@@ -17,7 +17,8 @@ This [WonderCMS] plugin adds Microsoft's [Monaco Editor], best known for powerin
 1. Login to your [WonderCMS] website.
 2. Click "Settings" and click "Plugins".
 3. Find plugin in the list and click "install".
-4. Click any editable area!
+4. Each of the editable areas will get an editor!
+5. Pressing Ctrl+S will save!
 
 [wondercms]: https://github.com/robiso/wondercms/
 [monaco editor]: https://github.com/microsoft/monaco-editor/

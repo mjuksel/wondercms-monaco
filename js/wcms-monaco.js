@@ -3,9 +3,11 @@ require.config({
     vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.20.0/dev/vs'
   }
 });
+
 self.MonacoEnvironment = {
   getWorkerUrl: () => proxy
 };
+
 let proxy = URL.createObjectURL(
   new Blob(
     [
@@ -30,7 +32,7 @@ document.querySelectorAll('.editable').forEach((el) => {
 
 function makeEditor(el, ed) {
   let txt = el.innerHTML;
-  el.classList.add('hide');
+  el.setAttribute('hidden', true);
 
   require(['vs/editor/editor.main'], () => {
     // create editor, i've added some basic settings.
@@ -55,8 +57,15 @@ function makeEditor(el, ed) {
       label: `Save Wonders ;D`,
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
       run: () => {
-        fieldSave(el.id, editor.getValue(), el.dataset.target);
-        return null;
+        $.post('', {
+          fieldname: el.id,
+          content: editor.getValue(),
+          target: el.dataset.target,
+          token: token
+        }).done(() => {
+          $('#save').show();
+          $('#save').delay(150).fadeOut();
+        });
       }
     });
 
@@ -87,5 +96,6 @@ function makeEditor(el, ed) {
         editor.layout();
       }
     };
+    updateHeight();
   });
 }
