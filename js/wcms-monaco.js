@@ -32,7 +32,7 @@ document.querySelectorAll('.editable').forEach((el) => {
 
 function makeEditor(el, ed) {
   let txt = el.innerHTML;
-  el.setAttribute('hidden', true);
+  el.remove();
 
   require(['vs/editor/editor.main'], () => {
     // create editor, i've added some basic settings.
