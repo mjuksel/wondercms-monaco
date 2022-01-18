@@ -1,1 +1,1 @@
-Adds MS Monaco editor on all fields, each one **needs** to be saved via Ctrl+S.
+Adds Monaco editor on all fields. They are saved via <b>Ctrl+S</b>.
