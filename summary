@@ -1,1 +1,1 @@
-Adds the Microsoft Monaco editor on content editable fields.
+Adds MS Monaco editor on all fields, each one **needs** to be saved via Ctrl+S.
