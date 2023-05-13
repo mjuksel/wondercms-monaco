@@ -1,5 +1,9 @@
 # [Monaco Editor] for [WonderCMS]
 
+## Author
+- mjuksel: https://github.com/mjuksel
+
+
 ## Description
 
 This [WonderCMS] plugin adds Microsoft's [Monaco Editor], best known for powering [VSCode]

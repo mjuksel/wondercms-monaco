@@ -30,6 +30,18 @@ document.querySelectorAll('.editable').forEach((el) => {
   makeEditor(el, wrapper);
 });
 
+async function post(url, data) {
+  const response = fetch(url, {
+    headers: {
+      "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+      "x-requested-with": "XMLHttpRequest"
+    },
+    body: `fieldname=${data.fieldname}&content=${data.content}&target=${data.target}&token=${data.token}`,
+    method: "POST"
+  });
+  return response;
+}
+
 function makeEditor(el, ed) {
   let txt = el.innerHTML;
   el.remove();
@@ -57,14 +69,17 @@ function makeEditor(el, ed) {
       label: `Save Wonders ;D`,
       keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
       run: () => {
-        $.post('', {
+        post('', {
           fieldname: el.id,
           content: editor.getValue(),
           target: el.dataset.target,
           token: token
-        }).done(() => {
-          $('#save').show();
-          $('#save').delay(150).fadeOut();
+        })
+        .then(() => {
+          document.querySelector('#save').style.display = 'block';
+          setTimeout(() => {
+            document.querySelector('#save').removeAttribute('style');
+          }, 250);
         });
       }
     });

@@ -3,7 +3,7 @@
  * Microsoft's Monaco Editor for WonderCMS! :)
  *
  * @author mjxl
- * @version 3.0.3
+ * @version 3.0.4
  */
 
 global $Wcms;
@@ -22,7 +22,7 @@ function monacoJS($args)
   if ($Wcms->loggedIn) {
     $script = <<<EOT
     <script src='https://cdn.jsdelivr.net/npm/monaco-editor@0.20.0/min/vs/loader.js'></script>
-    <script src='{$Wcms->url('plugins/wondercms-monaco/js/wcms-monaco.js')}'></script>
+    <script src='{$Wcms->url('plugins/monaco-editor/js/wcms-monaco.js')}'></script>
 EOT;
     $args[0] .= $script;
   }
@@ -35,7 +35,7 @@ function monacoCSS($args)
   if ($Wcms->loggedIn) {
     $script = <<<EOT
     <link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet" />
-    <link rel='stylesheet' href='{$Wcms->url('plugins/wondercms-monaco/css/wcms-monaco.css')}' media='screen'>
+    <link rel='stylesheet' href='{$Wcms->url('plugins/monaco-editor/css/wcms-monaco.css')}' media='screen'>
 EOT;
     $args[0] .= $script;
   }
