@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "plugins": {
+        "monaco-editor": {
+            "name": "Monaco Editor",
+            "repo": "https://github.com/robiso/monaco-editor/tree/master",
+            "zip": "https://github.com/robiso/monaco-editor/archive/master.zip",
+            "summary": "Adds the Microsoft Monaco editor on content editable fields. Important: to save changes, you must click CTRL+S.",
+            "version": "3.0.4",
+            "image": "https://raw.githubusercontent.com/robiso/monaco-editor/master/preview.jpg"
+        }
+    }
+}
